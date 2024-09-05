@@ -1,0 +1,97 @@
+
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0E0D0D;
+}
+
+/* estructuramos desde la pantalla mas pequeña a la mas grande */
+
+
+/* estilos de mobile */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav ul {
+    color: #fff;
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    padding-right: 20px;
+}
+
+
+/* estilos de main */
+
+main {
+    height: 70vh;
+    display: grid;
+    margin: 10px 30px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 23%);
+    row-gap: 1.5rem;
+    align-content: center;
+}
+
+main div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .img-dos, main .img-cinco {
+    display: none;   
+}
+
+footer {
+    text-align: center;
+    color: whitesmoke;
+}
+
+
+/* estilos tablet */
+
+@media screen and (min-width: 600px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 50%);
+        column-gap: 1.5rem;
+    }
+
+    main .img-cuatro {
+        grid-column: span 2;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    main .img-dos, main .img-cinco {
+        display: block;
+    }
+
+    main {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 25% 30% 20%;
+    }
+
+    main .img-uno, main .img-tres {
+        grid-row: span 2;
+    } 
+
+    main .img-dos, main .img-cuatro{
+        grid-column: span 1;
+    }
+
+    main .img-cinco {
+        grid-column: span 3;
+    }
+}
